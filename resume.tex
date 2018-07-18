@@ -3,6 +3,7 @@
 \documentclass{resume}
 %\usepackage{zh_CN-Adobefonts_external} % Simplified Chinese Support using external fonts (./fonts/zh_CN-Adobe/)
 %\usepackage{zh_CN-Adobefonts_internal} % Simplified Chinese Support using system fonts
+\usepackage{hyperref}
 
 \begin{document}
 \pagenumbering{gobble} % suppress displaying page number
@@ -17,7 +18,9 @@
 
 \section{\faGraduationCap\ Education}
 \datedsubsection{\textbf{University of Toronto}}{2016 -- present}
-\textit{Honours Bachelor of Science} \\ \textperiodcentered\  Computer Science Specialist \\ \textperiodcentered\  Mathematics Major
+\textit{Honours Bachelor of Science \underline{(In Progress)}} 
+\\ \textperiodcentered\  Computer Science Specialist 
+\\ \textperiodcentered\  Mathematics Major
 
 \section{\faUsers\ Experience}
 \datedsubsection{\textbf{Fields Undergraduate Summer Research Program} Toronto, Canada}{2018, Summer}
@@ -37,7 +40,7 @@ Project : Discrete-Event Systems Model of a System's Ability to Protect Secrets.
 \section{\faCogs\ Skills + Interests}
 \subsection{\textbf{Capability of Multiple Programming Languages}}
 \begin{itemize}
- \item C/C++, Scheme, Haskell, Coq, Python, Java, Javascript
+ \item Haskell, Coq, C/C++, Scheme, Python, Java, Javascript
 \end{itemize}
 \subsection{\textbf{Intermediate Knowledge of Computer Science and Mathematics}}
 \begin{itemize}
@@ -54,22 +57,32 @@ Project : Discrete-Event Systems Model of a System's Ability to Protect Secrets.
 
 \subsection{\textbf{Interested in …}}
 \begin{itemize}
-\item Formal Verification and Program Analysis
-\item Type System and Programming Language and Type Theory, Structural Proof Theory, Homotopy Type Theory and Algebraic Topology
+\item Formal Verification, Program Analysis and Functional Programming
+\item Type System and Programming Language. Type Theory, Structural Proof Theory, Homotopy Type Theory and Algebraic Topology
 \item Interpreter, Compiler and Virtual Machine
-\item Mathematical logic (especially Proof Theory) and Computability Theory
+\item Mathematical logic (especially Proof Theory), Computability Theory and Category Theory
 \end{itemize}
 \section{\faCogs\ Projects}
 \begin{itemize}
 \item (subset of dynamic typing) Scheme to C transpiler. Thanks to \textit{Structure and Interpretation of Computer Program}, \textit{‘Write Yourself a Scheme in 48 Hours’} and \textit{Essentials of Programming languages}. \\
-\textit{in Haskell} \hfill https://github.com/DKXXXL/emesch
+\textit{\underline{in Haskell}} \hfill \url{https://github.com/DKXXXL/emesch}
 \\
-\item An interpreter and compiler of variant Scheme with Static typing . Thanks to \textit{Software Foundations} and \textit{'Implementing a JIT Compiled Language with Haskell and LLVM'} \\
-\textit{in Haskell, a compiler target to LLVM} \hfill https://github.com/DKXXXL/Schmidty \\
-\textit{in Coq, a semi-verified(soundness) interpreter} \hfill https://github.com/DKXXXL/VSchmidty \\
+\item An interpreter and compiler of variant Scheme with Static type system (subtyping, sum type, record type). An extension from the above project. Thanks to \textit{Software Foundations} and \textit{'Implementing a JIT Compiled Language with Haskell and LLVM'} \\
+\textit{\underline{in Haskell, a compiler target to LLVM}} \hfill https://github.com/DKXXXL/Schmidty \\
+\textit{\underline{in Coq, a semi-verified(soundness proved) interpreter}} \hfill \url{https://github.com/DKXXXL/VSchmidty} \\
 \\
-\item A theorem prover based on Calculus of Construction. Designed to be extensible with tactic system. A sketchy immitation of Coq. Thanks to \textit{Type Theory and Formal Proof} and flow.js.\\
-\textit{in Javascript, flow.js, on Node.js} \hfill https://github.com/DKXXXL/ITP.js
+\item A theorem prover based on Calculus of Construction. Designed to be extensible with tactic system. A sketchy imitation of Coq. Thanks to \textit{Type Theory and Formal Proof}, flow.js and a series of packages.\\
+\textit{\underline{in Javascript (some with flow.js), on Node.js}} \hfill \url{https://github.com/DKXXXL/ITP.js}
+\\
+\item (Partial) answers to programming exercises in \textit{Software Foundations} and \textit{Coq’Art Interactive Theorem Proving and Program Development}. \\
+\textit{\underline{in Coq}} \hfill \url{https://github.com/DKXXXL/Coq-Art-Exercises} \\
+..  \hfill \url{https://github.com/DKXXXL/SoftwareFoundations-BeforeCh15} \\
+..  \hfill \url{https://github.com/DKXXXL/SoftwareFoundations-AfterCh15} \\
+\\
+\item Implementing gobang on Altera DE2-115 board. Final Project for CSCB58S17. \\
+\textit{\underline{in Verilog}} 
+\hfill \url{https://github.com/DKXXXL/FiveSons\_Mirror}
+
 \end{itemize}
 
 % \section{\faHeartO\ Honors and Awards}
@@ -78,9 +91,8 @@ Project : Discrete-Event Systems Model of a System's Ability to Protect Secrets.
 
 \section{\faInfo\ Miscellaneous}
 \begin{itemize}[parsep=0.5ex]
-  \item Blog: http://your.blog.me
-  \item GitHub: https://github.com/username
-  \item Languages: English - Fluent, Mandarin - Native speaker
+  \item Linkedin: \url{https://www.linkedin.com/in/ende-jin-dkxxl/}
+  \item GitHub: \url{https://github.com/DKXXXL}
 \end{itemize}
 
 %% Reference
