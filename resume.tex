@@ -4,17 +4,42 @@
 %\usepackage{zh_CN-Adobefonts_external} % Simplified Chinese Support using external fonts (./fonts/zh_CN-Adobe/)
 %\usepackage{zh_CN-Adobefonts_internal} % Simplified Chinese Support using system fonts
 \usepackage{hyperref}
+\usepackage{fancyhdr}
+
+
+% \pagestyle{fancy}
+% \fancyhead[C]{\rule{.5\textwidth}{4\baselineskip}}% Add something BIG in the header
+% \setlength{\headheight}{120pt}
+% \chead{
+%   \name{Ende Jin}
+%   \basicInfo{
+%   \email{ende.jin@mail.utoronto.ca} \textperiodcentered\ 
+%   \phone{(+1) 647-6854680} 
+% }
+% \basicInfo{
+%   \linkedin[Ende Jin]{https://www.linkedin.com/in/ende-jin-dkxxl/} \textperiodcentered\ {https://www.linkedin.com/in/ende-jin-dkxxl/}
+% }
+% \basicInfo{
+%   \github[EDJ]{https://github.com/DKXXXL} \textperiodcentered {https://github.com/DKXXXL}
+% }
+% }
+% \rhead{\thepage}
 
 \begin{document}
-\pagenumbering{gobble} % suppress displaying page number
 
 \name{Ende Jin}
 
 \basicInfo{
   \email{ende.jin@mail.utoronto.ca} \textperiodcentered\ 
-  \phone{(+1) 647-6854680} \textperiodcentered\ 
-  \linkedin[Ende Jin]{https://www.linkedin.com/in/ende-jin-dkxxl/} \textperiodcentered\ 
-  \github[EDJ]{https://github.com/DKXXXL}}
+  \phone{(+1) 647-6854680} 
+}
+
+\basicInfo{
+  \linkedin[Ende Jin]{https://www.linkedin.com/in/ende-jin-dkxxl/} \textperiodcentered\ {https://www.linkedin.com/in/ende-jin-dkxxl/}
+}
+\basicInfo{
+  \github[EDJ]{https://github.com/DKXXXL} \textperiodcentered {https://github.com/DKXXXL}
+}
 
 \section{\faGraduationCap\ Education}
 \datedsubsection{\textbf{University of Toronto}}{2016 -- present}
@@ -64,14 +89,14 @@ that hiding information from several collaborating hackers.
 
 \section{\faCogs\ Projects}
 \begin{itemize}
-\item (subset of dynamic typing) Scheme to C transpiler. Thanks to \textit{Structure and Interpretation of Computer Program}, \textit{‘Write Yourself a Scheme in 48 Hours’} and \textit{Essentials of Programming languages}. \\
+\item (subset of dynamic typing) Scheme to C transpiler. References: \textit{Structure and Interpretation of Computer Program}, \textit{‘Write Yourself a Scheme in 48 Hours’} and \textit{Essentials of Programming languages}. \\
 \textit{\underline{in Haskell}} \hfill \url{https://github.com/DKXXXL/emesch}
 \\
-\item An interpreter and compiler of variant Scheme with Static type system (subtyping, sum type, record type). An extension from the above project. Thanks to \textit{Software Foundations} and \textit{'Implementing a JIT Compiled Language with Haskell and LLVM'} \\
+\item An interpreter and compiler of variant Scheme with Static type system (subtyping, sum type, record type). An extension from the above project. References: \textit{Software Foundations} and \textit{'Implementing a JIT Compiled Language with Haskell and LLVM'} \\
 \textit{\underline{in Haskell, a compiler target to LLVM}} \hfill \url{https://github.com/DKXXXL/Schmidty} \\
 \textit{\underline{in Coq, a semi-verified(soundness proved) interpreter}} \hfill \url{https://github.com/DKXXXL/VSchmidty} \\
 \\
-\item A theorem prover based on Calculus of Construction. Designed to be extensible with tactic system. A sketchy imitation of Coq. Thanks to \textit{Type Theory and Formal Proof}, flow.js and a series of packages.\\
+\item A theorem prover based on Calculus of Construction. Designed to be extensible with tactic system. A sketchy imitation of Coq. References: \textit{Type Theory and Formal Proof}. Thanks to flow.js and a series of packages.\\
 \textit{\underline{in Javascript, with flow.js}} \hfill \url{https://github.com/DKXXXL/ITP.js}
 \\
 \item (Partial) answers to programming exercises in \textit{Software Foundations} and \textit{Coq’Art Interactive Theorem Proving and Program Development}. \\
