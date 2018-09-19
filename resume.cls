@@ -30,13 +30,21 @@
   SmallCapsFont = Fontin-SmallCaps
 ]{texgyretermes}
 
+% \RequirePackage[
+% 	a4paper,
+% 	left=0.8in,
+% 	right=0.8in,
+% 	top=0.70in,
+%   bottom=0.55in,
+%   nohead
+% ]{geometry}
 \RequirePackage[
-	a4paper,
-	left=0.8in,
-	right=0.8in,
-	top=0.70in,
-	bottom=0.55in,
-	nohead
+  a4paper,
+  left=0.8in,
+  right=0.8in,
+  top=150pt,
+  headheight=150pt,
+  headsep=10pt,heightrounded
 ]{geometry}
 
 \RequirePackage{titlesec}
