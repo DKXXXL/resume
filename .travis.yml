@@ -3,7 +3,7 @@ before_install:
   texlive-latex-extra texlive-fonts-extra texlive-latex-recommended dvipng
 script:
 - mkdir _build
-- xelatex -output-directory _build resume.tex
+- xetex -output-directory _build resume.tex
 deploy:
   provider: releases
   api_key:
