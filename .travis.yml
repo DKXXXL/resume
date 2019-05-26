@@ -3,7 +3,7 @@ before_install:
   texlive-latex-extra texlive-fonts-extra texlive-latex-recommended dvipng
 script:
 - mkdir _build
-- pdflatex -output-directory _build resume.tex
+- pdflatex -interaction=nonstopmode -halt-on-error -output-directory _build resume.tex
 deploy:
   provider: releases
   api_key:
