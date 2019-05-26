@@ -3,12 +3,12 @@ before_install:
   texlive-latex-extra texlive-fonts-extra texlive-latex-recommended dvipng
 script:
 - mkdir _build
-- pdflatex -output-directory resume.tex
+- xelatex -output-directory _build resume.tex
 deploy:
   provider: releases
   api_key:
     secure: dRULOPPamwun55+0yw5QGlQYOnrwD1q60AXqMv/TYViRu8EfL7UeDAFYjBKvAxrJGJGDv9hkxzTfQd0pMnXfSjTX6Jr8rWjT9H68CWBVZnlRcx0JLgpD3b8cZRhDF76J3ESSTLLxiq+0mrNwG5A4xFMg/xsIu3AFf8PDZ52NGQODHiLYmcHefBWde7qo6P9onnd0zyQruHWTOJ81peKMrMKuPxnq0VG/esr3hnzz01RVNVJopRPHTW0BL8ZxDo4PQilWRxRGFiYIoN5RE8LFHOKW8xAvUxrAMAa6wDtAfdRcbXjNuYFDeTuJONdytt7y5wQMR6uduxr555uWk8ON8Sv877S3v3KCrCJL+EHeO9n90wt1gvkdWo4QUWi/Rj++PeL5jUu98Xj7gA/mFjcTmOiQMZ09Lo9K4gk5k4qEx+hIH9AIwF36BcbbwSa81hB8sLaQg9a0lrUE3Yj4OVTXw40bCWDAMKe2FV1JpWLtBQMz+RNxXgx5w8bCSAodQxwgwL3bd/2lGTQmr/dgYdORHlx9HBTZO/BGM/BC781BKCNw4KsUwo/AcwxNi+pfLeGUPlt2R3oC7eYymocdB8rZDURJRJgB9PDgxwhA5wtmb9sJ2Elnh3pFr2p+vq+muBPvWyX8hmaeori8cO2EDF2f38QZs5XWbUvQsq1R1cHPcf4=
-  file: _build/
+  file: _build/resume.pdf
   skip_cleanup: true
   on:
     tags: true
