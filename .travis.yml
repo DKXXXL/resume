@@ -1,17 +1,11 @@
 sudo: required
 language: generic
 services: docker
+before_install:
+- openssl aes-256-cbc -K $encrypted_8430712f9c5f_key -iv $encrypted_8430712f9c5f_iv -in .dropbox_uploader.enc -out ~\/.dropbox_uploader -d
 script:
 - docker run --mount src=$TRAVIS_BUILD_DIR/,target=/usr/src/tex,type=bind dxjoke/tectonic-docker
   /bin/sh -c "tectonic resume.tex"
-deploy:
-  provider: releases
-  api_key:
-    secure: mnfIlATUuCIacv8d0IH0SDU8yBrkd2s9Eijc3P8DV7xRZUaNJb5iCDAbW/EAgrc/v6x49Vjlr7OjVVmU0MWZKMCKwc8eZeLNkftZpPtXexw6iklq80zET2YpBX3kM1pzpeKdY57F+ZpSymRTTBs5z5NDJNVIw5wTa6Z/0m7s5w7sw2BeJsgg7Zi3cKOjoAPS6IqSJrcbDyE6wuD3rUHl0HJRLMDVirTVD7/b18jGaoXKJPdd3LEMOkSVrwIsQ8VZ5FUdVdqXAhRgLGirXrHjGLM66mbtZeJ2UDcG8Z/e2deO99mVvov3GZJWE6vlOpQ87eP5twB0Ac6df1Fk7WMKucr0KfP95Rx07pyudcy5Mcx+8ffqKflnvrVUY/TNtLxQU4o62Jz7/jQbSOwcjFbteRPq9SnmS6b8dCfB2d3WRolRo29OVnzL4qqAW8NHWpiEqqPKyhIieYo/UwSFN8nLdUt8U6g/Kbq4FgJxef4BbyJfjzELVvcCZtvKlWwH1P/rutXXin1PhihuQRAH34rwoM5avJgPv3dXUf0h72x3Ed5gGL4U0Ls+8PKNaEsXBUQnT1G89gSUoLnA1lwURIvOmMePvimpwhyGNInqfsQpOEdR0JyhRr3niOGus6CLBCmek/QF5fEg1T91Q1ul86VbxEbStBXtZpTcSncS383FN8w=
-  file: ./resume.pdf
-  skip_cleanup: true
-  on:
-    repo: DKXXXL/resume
-    tags: true
-    branch: master
+- ./dropbox_uploader.sh upload resume.pdf ${TRAVIS_BRANCH}/resume.pdf
+- ./dropbox_uploader.sh upload resume.pdf ${TRAVIS_BRANCH}/resume-${TRAVIS_JOB_NUMBER}.pdf
     
