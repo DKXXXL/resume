@@ -6,6 +6,7 @@ before_install:
 script:
 - docker run --mount src=$TRAVIS_BUILD_DIR/,target=/usr/src/tex,type=bind dxjoke/tectonic-docker
   /bin/sh -c "tectonic resume.tex"
+- chmod +x ./dropbox_uploader.sh
 - ./dropbox_uploader.sh upload resume.pdf ${TRAVIS_BRANCH}/resume.pdf
 - ./dropbox_uploader.sh upload resume.pdf ${TRAVIS_BRANCH}/resume-${TRAVIS_JOB_NUMBER}.pdf
     
