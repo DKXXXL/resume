@@ -1,157 +1,200 @@
-% !TEX program = xelatex
+\documentclass[fontsize=11pt]{article}
+    \usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[protrusion=true,expansion=true]{microtype}
+\usepackage[svgnames]{xcolor}  % Colours by their 'svgnames'
+\usepackage[margin=0.75in]{geometry}
+  \textheight=700px
+\usepackage{url}
+\usepackage{lmodern} % Allow arbitrary font sizes
+\usepackage{textcomp}
 
-\documentclass{resume}
-%\usepackage{zh_CN-Adobefonts_external} % Simplified Chinese Support using external fonts (./fonts/zh_CN-Adobe/)
-%\usepackage{zh_CN-Adobefonts_internal} % Simplified Chinese Support using system fonts
-\usepackage{hyperref}
+\usepackage{fontawesome} % Social Account Icon
 
-\usepackage{lastpage}
-\usepackage{fancyhdr}
+%% Define a new 'modern' style for the url package that will use a smaller font.
+\makeatletter
+\def\url@modernstyle{
+  \@ifundefined{selectfont}{\def\UrlFont{\sf}}{\def\UrlFont{}}}
+\makeatother
+\urlstyle{modern} %% And use the newly defined style.
 
+\frenchspacing              % Better looking spacings after periods
+\pagestyle{empty}           % No pagenumbers/headers/footers
 
+\renewcommand{\familydefault}{\sfdefault}
 
-\fancyhf{} % clear all header and footers
-% \renewcommand{\headrulewidth}{0pt} % remove the header rule
-\pagestyle{fancy}
-  
-% \fancyhead[C]{\rule{.5\textwidth}{4\baselineskip}}% Add something BIG in the header
-\rfoot{PAGE \thepage\  of II}
-% \rfoot{PAGE \thepage\  of \pageref{LastPage}}
-\chead{ 
-  \name{Ende Jin}
-  \basicInfo{
-    \email{ende.jin@mail.utoronto.ca} \textperiodcentered\ 
-    \phone{(+1) 647-6854680} 
-  }
-  \basicInfo{
-    \linkedin[Ende Jin]{https://www.linkedin.com/in/ende-jin-dkxxl/} \textperiodcentered\ \url{https://www.linkedin.com/in/ende-jin-dkxxl/}
-  }
-  \basicInfo{
-    \github[EDJ]{https://github.com/DKXXXL} \textperiodcentered \url{https://github.com/DKXXXL}
-  }
+%%% Custom sectioning (sectsty package)
+%%% ------------------------------------------------------------
+\usepackage{sectsty}
+
+\sectionfont{                 % Change font of \section command
+  \usefont{OT1}{phv}{b}{n}%   % bch-b-n: CharterBT-Bold font
+  \sectionrule{0pt}{0pt}{-5pt}{3pt}}
+
+%%% Macros
+%%% ------------------------------------------------------------
+\newlength{\spacebox}
+\settowidth{\spacebox}{8888888888}      % Box to align text
+\newcommand{\sepspace}{\vspace*{1em}}   % Vertical space macro
+
+\newcommand{\MyName}[1]{ % Name
+    \Huge \usefont{OT1}{phv}{b}{n} \hfill #1
+    \par \normalsize \normalfont}
+
+\newcommand{\MySlogan}[1]{ % Slogan (optional)
+    \large \usefont{OT1}{phv}{m}{n}\hfill \textit{#1}
+    \par \normalsize \normalfont}
+
+\newcommand{\NewPart}[1]{\section*{\uppercase{#1}}}
+
+\newcommand{\PersonalEntry}[2]{
+    \noindent\hangindent=2em\hangafter=0 % Indentation
+    \parbox{\spacebox}{                  % Box to align text
+    \textit{#1}}                      % Entry name (birth, address, etc.)
+    \hspace{1.5em} #2 \par}              % Entry value
+
+% \newcommand{\SkillsEntry}[2]{                % Same as \PersonalEntry
+%     \noindent\hangindent=2em\hangafter=0 % Indentation
+%     \parbox{\spacebox}{                  % Box to align text
+%     \textit{#1}}                    % Entry name (birth, address, etc.)
+%     \hspace{1.5em} #2 \par}              % Entry value
+\newcommand{\SkillEntry}[2]{       % Same as \EducationEntry
+    \noindent \textbf{#1} \hfill      % Skill Title
+       % Duration
+        \noindent \textit{#2} \par        % Company
 }
 
+\newcommand{\SkillsEntry}[4]{       % Same as \EducationEntry
+    \noindent \textbf{#1} \hfill      % Skill Title
+       % Duration
+        \noindent \textit{#2} \par        % Company
+    \noindent\hangindent=2em\hangafter=0 \small #4 % Description
+    \normalsize \par}
 
-% \fancyhf{} % clear all header and footers
-% \renewcommand{\headrulewidth}{0pt} % remove the header rule
-% \fancyfoot[LE,RO]{\thepage} % Left side on Even pages; Right side on Odd pages
-% \pagestyle{fancy}
-% \fancypagestyle{plain}{%
-%   \fancyhf{}%
-%   \renewcommand{\headrulewidth}{0pt}%
-%   \fancyhf[lef,rof]{ \thepage}%
-% }
+\newcommand{\AwardsEntry}[2]{                % Same as \PersonalEntry
+    \noindent\hangindent=2em\hangafter=0 % Indentation
+    \parbox{\spacebox}{                  % Box to align text
+    \textit{#1}}                    % Entry name (birth, address, etc.)
+    \hspace{1.5em} #2 \par}              % Entry value
 
+\newcommand{\EducationEntry}[4]{
+    \noindent \textbf{#1} \hfill      % Study
+    \colorbox{Black}{
+      \parbox{9em}{
+      \hfill\color{White}#2}} \par  % Duration
+    \noindent \textit{#3} \par        % School
+    \noindent\hangindent=2em\hangafter=0 \small #4 % Description
+    \normalsize \par}
 
-\begin{document}
+\newcommand{\WorkEntry}[4]{       % Same as \EducationEntry
+    \noindent \textbf{#1} \hfill      % Jobname
+    \colorbox{Black}{%
+      \parbox{9em}{%
+      \hfill\color{White}#2}} \par   % Duration
+        \noindent \textit{#2} \par        % Company
+    \noindent\hangindent=2em\hangafter=0 \small #4 % Description
+    \normalsize \par}
 
+\newcommand{\ProjectEntry}[4]{         % Similar to \EducationEntry
+    \noindent \textbf{#1}  \hfill {#2} \par
+    \noindent \textit{#3} \par
+    \noindent \small #4 % Description
+    \normalsize \par}
 
-\pagenumbering{Roman}
-
-% \name{Ende Jin}
-
-% \basicInfo{
-%   \email{ende.jin@mail.utoronto.ca} \textperiodcentered\ 
-%   \phone{(+1) 647-6854680} 
-% }
-
-% \basicInfo{
-%   \linkedin[Ende Jin]{https://www.linkedin.com/in/ende-jin-dkxxl/} \textperiodcentered\ \url{https://www.linkedin.com/in/ende-jin-dkxxl/}
-% }
-% \basicInfo{
-%   \github[EDJ]{https://github.com/DKXXXL} \textperiodcentered \url{https://github.com/DKXXXL}
-% }
-
-\section{\faGraduationCap\ Education}
-\datedsubsection{\textbf{University of Toronto}}{2016 -- present}
-\textit{Honours Bachelor of Science \underline{(In Progress)}}  \hfill cGPA 3.92/4.00
-\\ \textperiodcentered\  Computer Science Specialist 
-\\ \textperiodcentered\  Mathematics Major
-
-\section{\faUsers\ Experience}
-\datedsubsection{\textbf{Fields Undergraduate Summer Research Program} Toronto, Canada}{2018, Summer}
-\role{Summer Research Internship} {}
-Project : Discrete-Event Systems Model of a System's Ability to Protect Secrets.
-
-Creating an algorithm that comes up with minimal communication protocol 
-for several agents who cooperate to discover the secret information of a machine 
-which has partial information hidden. \\
-This research can help a system to evaluate the current strategy 
-that hides information from several collaborating hackers.
-
-\datedsubsection{\textbf{Huawei Heterogeneous Compiler Technologies Lab} Markham, Canada}{2019 May - Present}
-\role{Assistant Software Engineer} {}
-Working on an advanced Compiler Backend, target to the VLIW architecture processors. 
+\newcommand{\AwardEntry}[4]{         % Similar to \EducationEntry
+    \noindent \textbf{#1} \noindent \textit{#3} \hfill {#2} \par
+    \noindent \small #4 % Description
+    \normalsize \par}
+    \begin{document}
 
 
+    
+\MyName{Ende Jin}
+\bigskip
+{\small \hfill ende.jin@mail.utoronto.ca | (+1) 6476854680 | https://github.com/DKXXXL/ \par
+ \hfill  https://www.linkedin.com/in/ende-jin-dkxxl/ | https://dkxxxl.github.io/}
+%%% Education
+%%% ------------------------------------------------------------
+\NewPart{Education}{}
+\EducationEntry
+{BS Computer Science Specialist + Mathematics Major}
+{Sep 2016 - July 2021}
+{University of Toronto, Toronto.    \bf{GPA 3.92}}
+%%% Work experience
+%%% ------------------------------------------------------------
 
+\NewPart{Experience}{}
 
-% Reference Test
-%\datedsubsection{\textbf{Paper Title\cite{zaharia2012resilient}}}{May. 2015}
-%An xxx optimized for xxx\cite{verma2015large}
-%\begin{itemize}
-%  \item main contribution
-%\end{itemize}
+\WorkEntry
+{Research Assistant}
+{July 2018 - Sep 2018}
+{Fields Institute, Toronto}
+{\begin{itemize} \itemsep -1pt
+    \item Project : Discrete-Event Systems Model of a System’s Ability to Protect Secrets. 
+    \\ Creating an algorithm that comes up with minimal communication protocol for several agents who cooperate to discover the secret information of a machine which has partial information hidden. This research can help a system to evaluate the current strategy that hides information from several collaborating hackers.
+    \end{itemize}}
+    
+\WorkEntry
+{Assistant Software Engineer}
+{May 2019 - May 2020}
+{Huawei Research Center, Toronto}
+{\begin{itemize} \itemsep -1pt
+    \item Work on LLVM midend and backend, target to advanced VLIW architecture.
+    \item Research and attempt to deploy cutting-edged academic technology.  
+	\end{itemize}}
+%%% Skills
+%%% ------------------------------------------------------------
+\NewPart{Skills}{}
+\SkillEntry{Experience of Various Programming Languages}{Coq, Haskell, Java, C/C++, Python}
 
-\section{\faCogs\ Skills}
-\subsection{\textbf{Experience with Multiple Programming Languages}}
-\begin{itemize}
- \item Haskell, Coq, C/C++, Scheme (Racket), Python, Java, Javascript
-\end{itemize}
-\subsection{\textbf{Passion and Knowledge on Computer Science and Mathematics}}
-\begin{itemize}
-\item Basic knowledge of the process of compilation and interpretation of (functional) programming languages
-\item Introduction of Calculus, Multivariable Calculus, Linear Algebra, Ordinary Differential Equation and Number Theory
-\item Understand the generated assembly code with the help of developer manual
-\item Introduction of Computability theory and Mathematical logic and Formal Verification
-\end{itemize}
-\subsection{\textbf{Acquisition of Two languages}}
-\begin{itemize}
-\item Chinese (Mandarin) – Native Speaker
-\item English – Written/Spoken
-\end{itemize}
+\SkillsEntry{Passion and Knowledge about Both Computer Science and Mathematics}{}{}{
+    \begin{itemize} \itemsep -1pt
+        \item Basic knowledge of the process of compilation and interpretation of (functional) programming languages;
+        Understand the generated assembly code with the help of developer manual
+        \item (Multivariable) Calculus, Linear Algebra, Ordinary Differential Equation and Number Theory; 
+        Computability theory and Mathematical logic and Formal Verification
+        \item Self-learning Category Theory and Type Theory
+    \end{itemize}
+}
 
- 
-\section{\faCogs\ Projects}
-\begin{itemize}
-\item (subset of dynamic typing) Scheme to C transpiler. References: \textit{Structure and Interpretation of Computer Program}, \textit{‘Write Yourself a Scheme in 48 Hours’} and \textit{Essentials of Programming languages}. \\
-\textit{\underline{in Haskell}} \hfill \url{https://github.com/DKXXXL/emesch}
-\\
-\item An interpreter and compiler of variant Scheme with Static type system (subtyping, sum type, record type). An extension from the above project. References: \textit{Software Foundations} and \textit{'Implementing a JIT Compiled Language with Haskell and LLVM'} \\
-\textit{\underline{in Haskell, a compiler target to LLVM}} \hfill \url{https://github.com/DKXXXL/Schmidty} \\
-\textit{\underline{in Coq, a semi-verified(soundness proved) interpreter}} \hfill \url{https://github.com/DKXXXL/VSchmidty} \\
-\\
-\item A theorem prover based on Calculus of Construction. Designed to be extensible with tactic system. A sketchy imitation of Coq. References: \textit{Type Theory and Formal Proof}. Thanks to flow.js and a series of packages.\\
-\textit{\underline{in Javascript, with flow.js}} \hfill \url{https://github.com/DKXXXL/ITP.js}
-\\
-\item (Partial) answers to programming exercises in \textit{Software Foundations} and \textit{Coq’Art Interactive Theorem Proving and Program Development}. \\
-\textit{\underline{in Coq}} \hfill \url{https://github.com/DKXXXL/Coq-Art-Exercises} \\
-..  \hfill \url{https://github.com/DKXXXL/SoftwareFoundations-BeforeCh15} \\
-..  \hfill \url{https://github.com/DKXXXL/SoftwareFoundations-AfterCh15} \\
-\\
-\item Implementing gobang on Altera DE2-115 board. Final Project for CSCB58S17. \\
-\textit{\underline{in Verilog}} 
-\hfill \url{https://github.com/DKXXXL/FiveSons\_Mirror}
+\SkillEntry{Acqusition of Two Languages}{
+    Mandarin (Native Speaker) ; English (Written/Spoken)
+}
 
-\end{itemize}
+%%% Projects
+%%% ------------------------------------------------------------
+\NewPart{Personal Projects}{}
 
-% \section{\faHeartO\ Honors and Awards}
-% \datedline{\textit{\nth{1} Prize}, Award on xxx }{Jun. 2013}
-% \datedline{Other awards}{2015}
+\ProjectEntry{Scheme-subset to C Transpiler}{https://github.com/DKXXXL/emesch}
+{Haskell, Text.Parser.Combinators}
+{ \texttt{References}: \textit{Structure and Intrerpretation of Computer Program}, \textit{Write Yourself a Scheme in 48 Hours}, \textit{Essentials of Programming languages}}
 
-\section{\faInfo\ Miscellaneous}
+\ProjectEntry{Typed-Scheme-like  Compiler and semi-Verifed Interpreter }{https://github.com/DKXXXL/Schmidty}
+{Haskell, Coq, LLVM, llvm-pretty \hfill {https://github.com/DKXXXL/VSchmidty}}
+{An interpreter and A Compiler of a programming language, a variant of Scheme. With Sum, Record type and subtyping mechanism.  
+The operational semantic is paritally verified by Coq. 
+\texttt{References}: \textit{Implementing a JIT Compiled Language with Haskell and LLVM}, \textit{Software Foundations}, \textit{Essentials of Programming languages} }
 
+\ProjectEntry{A theorem prover based on Calculus of Construction.}{https://github.com/DKXXXL/ITP.js}
+{flow.js, Javascript, Parsimmon, jsverify }
+{Designed to be extensible with tactic system. 
+A sketchy imitation of Coq. 
+\texttt{Reference}: \textit{Type Theory and Formal Proof}
+}
 
-\subsection{\textbf{Interested in …}}
-\begin{itemize}
-\item Formal Verification, Program Analysis and Functional Programming
-\item Type System and Programming Language. 
-\item Type Theory, Structural Proof Theory, Mathematical logic and Category Theory
-\item Interpreter, Compiler and Programming Language Runtime 
-\end{itemize}
+\ProjectEntry{A theorem prover based on Calculus of Construction.}{https://github.com/DKXXXL/ITP.js}
+{flow.js, Javascript, Parsimmon, jsverify }
+{Designed to be extensible with tactic system. 
+A sketchy imitation of Coq. 
+\texttt{Reference}: \textit{Type Theory and Formal Proof}
+}
 
-%% Reference
-%\newpage
-%\bibliographystyle{IEEETran}
-%\bibliography{mycite}
+\ProjectEntry{(Partial) answers to programming exercises in \textit{Software Foundations} and \textit{Coq’Art}.}{}{Coq}{
+https://github.com/DKXXXL/Coq-Art-Exercises
+; https://github.com/DKXXXL/SoftwareFoundations-BeforeCh15
+}
+
+\ 
 \end{document}
