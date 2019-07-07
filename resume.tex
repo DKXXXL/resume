@@ -3,15 +3,15 @@
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage{lmodern}
-\usepackage[protrusion=true,expansion=true]{microtype}
+% \usepackage[protrusion=true,expansion=true]{microtype}
 \usepackage[svgnames]{xcolor}  % Colours by their 'svgnames'
 \usepackage[margin=0.75in]{geometry}
-  \textheight=700px
+  \textheight=700pt
 \usepackage{url}
 \usepackage{lmodern} % Allow arbitrary font sizes
 \usepackage{textcomp}
 
-\usepackage{fontawesome} % Social Account Icon
+
 
 %% Define a new 'modern' style for the url package that will use a smaller font.
 \makeatletter
@@ -81,20 +81,20 @@
 
 \newcommand{\EducationEntry}[4]{
     \noindent \textbf{#1} \hfill      % Study
-    \colorbox{Black}{
-      \parbox{9em}{
-      \hfill\color{White}#2}} \par  % Duration
+    \colorbox{Black}{ 
+      \parbox{11em}{
+      \centering \color{White}#2}} \par  % Duration
     \noindent \textit{#3} \par        % School
-    \noindent\hangindent=2em\hangafter=0 \small #4 % Description
+    \noindent\hangindent=0em\hangafter=0 \small #4 % Description
     \normalsize \par}
 
 \newcommand{\WorkEntry}[4]{       % Same as \EducationEntry
     \noindent \textbf{#1} \hfill      % Jobname
     \colorbox{Black}{%
-      \parbox{9em}{%
-      \hfill\color{White}#2}} \par   % Duration
+      \parbox{11em}{%
+      \centering\color{White}#2}} \par   % Duration
         \noindent \textit{#2} \par        % Company
-    \noindent\hangindent=2em\hangafter=0 \small #4 % Description
+    \noindent\hangindent=0em\hangafter=0 \small #4 % Description
     \normalsize \par}
 
 \newcommand{\ProjectEntry}[4]{         % Similar to \EducationEntry
@@ -107,7 +107,7 @@
     \noindent \textbf{#1} \noindent \textit{#3} \hfill {#2} \par
     \noindent \small #4 % Description
     \normalsize \par}
-    \begin{document}
+\begin{document}
 
 
     
@@ -120,7 +120,7 @@
 \NewPart{Education}{}
 \EducationEntry
 {BS Computer Science Specialist + Mathematics Major}
-{Sep 2016 - July 2021}
+{ \texttt{Sep 2016 - July 2021} }
 {University of Toronto, Toronto.    \bf{GPA 3.92}}
 %%% Work experience
 %%% ------------------------------------------------------------
@@ -129,7 +129,7 @@
 
 \WorkEntry
 {Research Assistant}
-{July 2018 - Sep 2018}
+{\texttt{July 2018 - Sep 2018}}
 {Fields Institute, Toronto}
 {\begin{itemize} \itemsep -1pt
     \item Project : Discrete-Event Systems Model of a System’s Ability to Protect Secrets. 
@@ -138,7 +138,7 @@
     
 \WorkEntry
 {Assistant Software Engineer}
-{May 2019 - May 2020}
+{\texttt{May 2019 - May 2020}}
 {Huawei Research Center, Toronto}
 {\begin{itemize} \itemsep -1pt
     \item Work on LLVM midend and backend, target to advanced VLIW architecture.
@@ -193,7 +193,7 @@ A sketchy imitation of Coq.
 
 \ProjectEntry{(Partial) answers to programming exercises in \textit{Software Foundations} and \textit{Coq’Art}.}{}{Coq}{
 https://github.com/DKXXXL/Coq-Art-Exercises
-; https://github.com/DKXXXL/SoftwareFoundations-BeforeCh15
+and https://github.com/DKXXXL/SoftwareFoundations-BeforeCh15
 }
 
 \ 
