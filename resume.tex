@@ -80,6 +80,8 @@
     \textit{#1}}                    % Entry name (birth, address, etc.)
     \hspace{1.5em} #2 \par}              % Entry value
 
+
+
 \newcommand{\EducationEntry}[4]{
     \noindent \textbf{#1} \hfill      % Study
     \colorbox{Black}{ 
@@ -100,7 +102,7 @@
 
 \newcommand{\ProjectEntry}[4]{         % Similar to \EducationEntry
     \noindent \textbf{#1}  \hfill {#2} \par
-    \noindent \textit{#3} \par
+    \noindent \textit{#3} \par 
     \noindent \small #4 % Description
     \normalsize \par}
 
@@ -123,15 +125,16 @@
 {BS Computer Science Specialist + Mathematics Major}
 { \texttt{Sep 2016 - July 2021} }
 {University of Toronto, Toronto.    \bf{cGPA 3.92}}
+\texttt{Awards:} $\bullet$ Coxeter Scholarship in Mathematics $\bullet$ University of Toronto Scholar $\bullet$ Norman Stuart Robertson Scholarships in Mathematics $\bullet$ College Silver Medal 
 
-\EducationEntry{Coxeter Scholarship in Mathematics}
-{\texttt{Oct 2019}}{At University of Toronto}
+\EducationEntry
+{MS Thesis Master of Mathematics (Computer Science)}
+{ \texttt{Sep 2021 - Aug 2023} }
+{University of Waterloo, Waterloo.    \bf{cGPA 3.92}}
+\texttt{Awards:} $\bullet$ 
+David R. Cheriton Graduate Scholarship $\bullet$ 
+International Master’s Award of Excellence
 
-\EducationEntry{University of Toronto Scholar}
-{\texttt{Aug 2019}}{At University of Toronto}
-
-\EducationEntry{Norman Stuart Robertson Scholarships in Mathematics}
-{\texttt{Nov 2020}}{At University of Toronto}
 %%% Work experience
 %%% ------------------------------------------------------------
 
@@ -160,48 +163,45 @@
 {Teaching Assistant}
 {\texttt{Sep 2020 - Apr 2021}}
 {University of Toronto}
-{\begin{itemize} \itemsep -1pt
-    \item CSC324H5 [Fall 2020] Principles of Programming Languages; CSC465H1 [Winter 2021] Formal Methods in Software Design
-    % \\ Creating an algorithm that comes up with minimal communication protocol for several agents who cooperate to discover the secret information of a machine which has partial information hidden. This research can help a system to evaluate the current strategy that hides information from several collaborating hackers.
-    \end{itemize}}
+{$\bullet$ CSC324H5 [Fall 2020] Principles of Programming Languages $\bullet$ CSC465H1 [Winter 2021] Formal Methods in Software Design
+}
 
 \WorkEntry
-{Research Project}
-{\texttt{Sep 2020 - Apr 2021}}
-{University of Toronto}
-{\begin{itemize} \itemsep -1pt
-    \item Project : Logic Programming and Proof Assistants: extending miniKanren
-    % Mainly on the topic of extending miniKanren and investigation on LF.
-    % \\ Creating an algorithm that comes up with minimal communication protocol for several agents who cooperate to discover the secret information of a machine which has partial information hidden. This research can help a system to evaluate the current strategy that hides information from several collaborating hackers.
-    \end{itemize}}
-%%% Skills
-%%% ------------------------------------------------------------
-\NewPart{Skills}{}
-% \SkillEntry{Experience of Various Programming Languages}{Coq, Haskell, Java, C/C++, Python, Racket}
-
-\SkillsEntry{Passion and Knowledge about CS and Math}{}{}{
-    \begin{itemize} \itemsep -1pt
-        \item Experience of Various Programming Languages : Coq, Haskell, Java, C/C++, Python, Racket
-        \item Basic knowledge of the process of compilation and interpretation of (functional) programming Languages
-        \item 
-        % (Multivariable) Calculus, 
-        % Linear Algebra; 
-        Computability theory and Mathematical logic, Functional Programming and Formal Verification
-        and Self-learned Category Theory and Type Theory (Notes on the Blog)
-    \end{itemize}
+{Teaching Assistant \& Research Assistant}
+{\texttt{Sep 2021 - Aug 2022}}
+{University of Waterloo}
+{$\bullet$ CS116 [Fall 2021] Introduction to Computer Science 2 $\bullet$ CS644 [Winter 2022] Compiler Construction
+$\bullet$ CS240 [Spring 2022] Data Structures and Data Management
+$\bullet$ Research Project: Extend Family Polymorphism into dependent type proof assistant (e.g. Coq)
 }
 
-\SkillEntry{Acqusition of Two Languages}{
-    Mandarin (Native Speaker) ; English (Written/Spoken)
-}
+% \WorkEntry
+% {Research Project}
+% {\texttt{Sep 2020 - Apr 2021}}
+% {University of Toronto}
+% {\begin{itemize} \itemsep -1pt
+%     \item Project : Logic Programming and Proof Assistants: extending miniKanren
+%     % Mainly on the topic of extending miniKanren and investigation on LF.
+%     % \\ Creating an algorithm that comes up with minimal communication protocol for several agents who cooperate to discover the secret information of a machine which has partial information hidden. This research can help a system to evaluate the current strategy that hides information from several collaborating hackers.
+%     \end{itemize}}
 
 %%% Projects
 %%% ------------------------------------------------------------
-\NewPart{Personal Projects}{}
+\NewPart{Projects / Publications}{}
 
-\ProjectEntry{Scheme-subset to C Transpiler}{\url{https://github.com/DKXXXL/emesch}}
-{Haskell, Text.Parser.Combinators}
-{ \texttt{References}: \textit{Structure and Intrerpretation of Computer Program}, \textit{Write Yourself a Scheme in 48 Hours}, \textit{Essentials of Programming languages}}
+\ProjectEntry{Universal Quantification and Implication in miniKanren }{\url{https://github.com/DKXXXL/fo-mKanren-to-LF}}
+{Racket, miniKanren}
+{We extend the defunctionalized miniKanren with the ability of expressing universal quantification and implication search. This can help to solve relational and logical query in a semi-decidable way, and thus become handy in the context of constraint solving and relation checking. 
+\\ \texttt{Publication}: Jin, Ende, et al. "Universal quantification and implication in miniKanren." Relational Programming Workshop. 2021. }
+
+
+\ProjectEntry{Support Family Polymorphism for programming and theorem proving in Coq }{}
+{OCaml, Coq}
+{ }
+
+\ProjectEntry{CDCL Algorithm formalized in Coq, and Parametrized }{\url{https://github.com/DKXXXL/ParaCDCL}}
+{Coq, OCaml}
+{We formalize an extensible and parametric formulation of CDCL algorithm inside Coq. }
 
 \ProjectEntry{Typed-Scheme-like  Compiler and semi-Verifed Interpreter }{\url{https://github.com/DKXXXL/Schmidty}}
 {Haskell, Coq, LLVM, llvm-pretty \hfill {\normalfont \url{https://github.com/DKXXXL/VSchmidty}}}
@@ -209,13 +209,17 @@
 The operational semantic is paritally verified by Coq. 
 \texttt{References}: \textit{Implementing a JIT Compiled Language with Haskell and LLVM}, \textit{Software Foundations}, \textit{Essentials of Programming languages} }
 
-\ProjectEntry{A theorem prover based on Calculus of Construction.}{\url{ https://github.com/DKXXXL/ITP.js}}
-{flow.js, Javascript, Parsimmon, jsverify }
-{Designed to be extensible with tactic system. 
-A sketchy imitation of Coq. 
-\texttt{Reference}: \textit{Type Theory and Formal Proof}
-}
+% \ProjectEntry{A theorem prover based on Calculus of Construction.}{\url{ https://github.com/DKXXXL/ITP.js}}
+% {flow.js, Javascript, Parsimmon, jsverify }
+% {Designed to be extensible with tactic system. 
+% A sketchy imitation of Coq. 
+% \texttt{Reference}: \textit{Type Theory and Formal Proof}
+% }
 
+
+% \ProjectEntry{Scheme-subset to C Transpiler}{\url{https://github.com/DKXXXL/emesch}}
+% {Haskell, Text.Parser.Combinators}
+% { \texttt{References}: \textit{Structure and Intrerpretation of Computer Program}, \textit{Write Yourself a Scheme in 48 Hours}, \textit{Essentials of Programming languages}}
 
 % \ProjectEntry{(Partial) answers to programming exercises in \textit{Software Foundations} and \textit{Coq’Art}.}{}{Coq}{
 % \begin{itemize}
@@ -224,6 +228,29 @@ A sketchy imitation of Coq.
 %     \item \url{https://github.com/DKXXXL/SoftwareFoundations-AfterCh15} 
 % \end{itemize}
 % }
+
+%%% Skills
+%%% ------------------------------------------------------------
+\NewPart{Skills}{}
+% \SkillEntry{Experience of Various Programming Languages}{Coq, Haskell, Java, C/C++, Python, Racket}
+
+\SkillsEntry{Passion and Knowledge about CS and Math}{}{}{
+    \begin{itemize} \itemsep -1pt
+        \item Experience of Various Programming Languages : Coq, Haskell, Java, C/C++, Python, Racket, OCaml, Agda
+        \item Basic knowledge of the process of compilation and interpretation of (functional) programming Languages
+        \item 
+        % (Multivariable) Calculus, 
+        % Linear Algebra; 
+        Computability theory and Mathematical logic, Functional Programming and Formal Verification,
+        Category Theory and Type Theory (Notes on the Blog)
+    \end{itemize}
+}
+
+\SkillEntry{Acqusition of Two Languages}{
+    Mandarin (Native Speaker) ; English (Written/Spoken)
+}
+
+
 
 \ 
 \end{document}

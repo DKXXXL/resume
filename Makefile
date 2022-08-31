@@ -1,4 +1,4 @@
-SRC = $(wildcard *.tex)
+SRC = resume.tex
 
 PDFS = $(SRC:.tex=.pdf)
 
@@ -11,7 +11,7 @@ zh_CN:	clean xelatex resume-zh_CN.tex
 pdf:	clean $(PDFS)
 
 %.pdf:  %.tex
-	xelatex $<
+	pdflatex -halt-on-error $<
 
 ifeq ($(OS),Windows_NT)
   # on Windows
