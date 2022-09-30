@@ -102,8 +102,7 @@
 
 \newcommand{\ProjectEntry}[4]{         % Similar to \EducationEntry
     \noindent \textbf{#1}  \hfill {#2} \par
-    \noindent \textit{#3} \par 
-    \noindent \small #4 % Description
+    \noindent \underline{\textit{#3}} $\quad$ \small #4 % Description
     \normalsize \par}
 
 \newcommand{\AwardEntry}[4]{         % Similar to \EducationEntry
@@ -116,11 +115,11 @@
     
 \MyName{Ende Jin}
 \bigskip
-{\small \hfill {\large \faEnvelope} ende.jin@mail.utoronto.ca | {\large \faMobile} (+1) 6476854680 | {\large \faGithubSquare}  \url{https://github.com/DKXXXL/} \par
+{\small \hfill {\large \faEnvelope} ende.jin@uwaterloo.ca | {\large \faMobile} (+1) 6476854680 | {\large \faGithubSquare}  \url{https://github.com/DKXXXL/} \par
  \hfill {\large \faLinkedinSquare}  \url{https://www.linkedin.com/in/ende-jin-dkxxl/} | {\large \faWordpress} \url{https://dkxxxl.github.io/}}
 %%% Education
 %%% ------------------------------------------------------------
-\NewPart{Education + Awards}{}
+\NewPart{Education + Award}{}
 \EducationEntry
 {MS Thesis Master of Mathematics (Computer Science)}
 { \texttt{Sep 2021 - Aug 2023} }
@@ -156,7 +155,7 @@ International Master’s Award of Excellence}
 {Assistant Software Engineer  \underline{@ Huawei Research Center, Toronto}}
 {\texttt{May 2019 - Aug 2020}}
 {}
-{$\bullet$ Profiling and working on LLVM midend and backend $\bullet$ "Abstracting Abstract Machine" approach static analysis for type infernce for Machine Learning DSL $\bullet$ Hindley-Milner-based Type Inference and Liquid Type Inference for Machine Learning DSL (related patent pending)}
+{$\bullet$ Profiling and working on LLVM midend and backend $\bullet$ "Abstracting Abstract Machine" approach static analysis for type infernce for Machine Learning DSL $\bullet$ Hindley-Milner-based Type Inference and Liquid Type Inference for Machine Learning Python-based DSL \textit{Myia} }
 % \begin{itemize} \itemsep -1pt
   %   \item Profiling and working on LLVM midend and backend.
   %   \item "Abstracting Abstract Machine" approach static analysis for type infernce for Machine Learning DSL
@@ -191,11 +190,12 @@ $\bullet$ Research Project: Extend Family Polymorphism into dependent type proof
 
 %%% Projects
 %%% ------------------------------------------------------------
-\NewPart{Projects / Publications}{}
+\NewPart{Project + Publication}{}
 
 \ProjectEntry{Universal Quantification and Implication in miniKanren }{\url{https://github.com/DKXXXL/fo-mKanren-to-LF}}
 {Racket, miniKanren}
-{We extend the miniKanren (a logic programming DSL) with the ability of expressing universal quantification and logical implication. This can help to solve relational and logical query in a semi-decidable way, and thus become handy in the context of constraint solving and relation checking in programming. 
+{We extend the miniKanren (a logic programming DSL) with the ability of expressing universal quantification and logical implication. 
+% This can help to solve relational and logical query in a semi-decidable way, and thus become handy in the context of constraint solving and relation checking in programming. 
 \underline{\textbf{Publication}}: Jin, Ende, et al. "Universal quantification and implication in miniKanren." Relational Programming Workshop. 2021. }
 
 
@@ -207,6 +207,11 @@ $\bullet$ Research Project: Extend Family Polymorphism into dependent type proof
 {Coq, OCaml}
 {CDCL algorithm is the very basis of modern day SAT/SMT solvers.  We formalize an extensible and parametric variant of CDCL algorithm (together with unsatisfiable proof generation) inside Coq. We also prove its correctness. Using Coq's facility, we check our prototype by initantiating it into DPLL and extracting the verified algorithm into OCaml.}
 
+\ProjectEntry{Full Stack Learning Note (Work In Progress)}{\url{https://github.com/DKXXXL/FullStackLearning}}
+{TypeScript, React}
+{This introductory note is for some FP programmer with zero knowledge on web application. 
+It originates from my own learning experiences of web application. We begin with a Read-Eval-Print-Loop~(REPL) project and start our exploration of full stack there.
+}
 % \ProjectEntry{Typed-Scheme-like  Compiler and semi-Verifed Interpreter }{\url{https://github.com/DKXXXL/Schmidty}}
 % {Haskell, Coq, LLVM, llvm-pretty \hfill {\normalfont \url{https://github.com/DKXXXL/VSchmidty}}}
 % {An interpreter and A Compiler of a programming language, a variant of Scheme. With Sum, Record type and subtyping mechanism.  
@@ -237,24 +242,22 @@ $\bullet$ Research Project: Extend Family Polymorphism into dependent type proof
 %%% ------------------------------------------------------------
 \NewPart{Skills}{}
 % \SkillEntry{Experience of Various Programming Languages}{Coq, Haskell, Java, C/C++, Python, Racket}
-
-\SkillsEntry{Passion and Knowledge about CS and Math}{}{}{
-    \begin{itemize} \itemsep -1pt
-        \item Hands on Experience for Various Programming Languages : Coq, Haskell, Java, C/C++, Python, Racket, OCaml, Agda
-        \item Basic knowledge of the process of compilation and interpretation of (functional) programming Languages
-        $\bullet$
-        % (Multivariable) Calculus, 
-        % Linear Algebra; 
-        Computability theory and Mathematical logic, Functional Programming and Formal Verification,
-        Self Learning Category Theory and Type Theory (Notes on the Blog)
-    \end{itemize}
-}
-
-\SkillEntry{Acqusition of Two Languages}{
-    Mandarin (Native Speaker) ; English (Written/Spoken)
-}
+\begin{itemize} \itemsep -1pt
+  \item Hands on Various Programming Languages : Coq, OCaml, Python, Racket, Haskell,  Agda,  Java, C/C++
+  \item Basic knowledge of the process of compilation and interpretation of (functional) programming Languages
+  $\bullet$
+  % (Multivariable) Calculus, 
+  % Linear Algebra; 
+  Computability theory and Mathematical logic, Functional Programming and Formal Verification,
+  Self Learning Category Theory and Type Theory (Notes on the Blog)
+  \item \textbf{Acqusition of Two Languages:} Mandarin (Native Speaker) ; English (Written/Spoken)
+\end{itemize}
+% \SkillsEntry{Passion and Knowledge about CS and Math}{}{}{}
+% \SkillEntry{}{
+%     Mandarin (Native Speaker) ; English (Written/Spoken)
+% }
 
 
 
-\ 
+
 \end{document}
