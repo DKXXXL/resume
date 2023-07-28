@@ -141,7 +141,7 @@
 \NewPart{Education}{}
 \EducationEntry
 {MS Thesis Master of Mathematics (Computer Science)}
-{ \texttt{Sep 2021 - Aug 2023} }
+{ \texttt{Sep 2021 - Jun 2023} }
 {University of Waterloo, Waterloo.    \bf{cGPA 4.00}}
 {
 \underline{\textbf{Thesis:}} \textit{Design and Implementation of Family Polymorphism for Interactive Theorem Proving}
@@ -157,122 +157,16 @@
 {}
 
 
-\NewPart{Award}{}
-
-\AwardEntry
-{PLDI'23, Distinguished Paper Award}
-{Jun 2023}
-{PLDI'23 Committee}
-{}
-
-\AwardEntry
-{David R. Cheriton Graduate Scholarship}
-{Sep 2021}
-{University of Waterloo}
-{}
-
-\AwardEntry
-{International Master’s Award of Excellence (IMAE)}
-{Sep 2021}
-{University of Waterloo}
-{}
-
-\AwardEntry
-{College Silver Medal}
-{Jun 2021}
-{University of Toronto}
-{}
-
-\AwardEntry
-{Norman Stuart Robertson Scholarships in Mathematics}
-{Nov 2020}
-{University of Toronto}
-{}
-
-\AwardEntry
-{St. Michael's College In-Course Scholarship}
-{Dec 2019}
-{University of Toronto}
-{}
-
-\AwardEntry
-{Coxeter Scholarship in Mathematics}
-{Oct 2019}
-{University of Toronto}
-{}
-
-\AwardEntry
-{University of Toronto Scholar}
-{Aug 2019}
-{University of Toronto}
-{}
-
-%%% Projects
-%%% ------------------------------------------------------------
-\NewPart{Publication / Project}{}
-
-
-\PublicationEntry{Extensible Metatheory Mechanization via Family Polymorphism}{\url{https://github.com/DKXXXL/FPOP}}
-{Distinguished Paper Award}
-{Family Inheritance generalizes Object Oriented Programming by supporting nested class and inheritance in various dimension,
-powerful enough to be another solution to the Expression Problem.
-This project is exploiting its potential on helping extensible theorem proving in mainstream proof assistants, by implementing an experimental Coq plugin and exploring meta-theoretical property. 
-}
-{\underline{\textbf{Publication}}: Jin, Ende, Nada Amin, and Yizhou Zhang. "Extensible Metatheory Mechanization via Family Polymorphism." Proceedings of the ACM on Programming Languages 7.PLDI (2023): 1608-1632.}
-
-\PublicationEntry{Universal Quantification and Implication in miniKanren}{\url{https://github.com/DKXXXL/fo-mKanren-to-LF}}
-{}
-{We extend the miniKanren (a logic programming DSL) with the ability of expressing universal quantification and logical implication. 
-% This can help to solve relational and logical query in a semi-decidable way, and thus become handy in the context of constraint solving and relation checking in programming. 
-}
-{\underline{\textbf{Publication}}: Jin, Ende, et al. "Universal quantification and implication in miniKanren." Relational Programming Workshop. 2021. }
-
-\ProjectEntry{CDCL Algorithm formalized in Coq, Parametrized }{\url{https://github.com/DKXXXL/ParaCDCL}}
-{}
-{CDCL algorithm is the very basis of modern day SAT/SMT solvers.  We formalize an extensible and parametric variant of CDCL algorithm (together with unsatisfiable proof generation) inside Coq. We also prove its correctness. Using Coq's facility, we check our prototype by initantiating it into DPLL and extracting the verified algorithm into OCaml.}
-
-% \ProjectEntry{Full Stack Learning Note (Work In Progress)}{\url{https://github.com/DKXXXL/FullStackLearning}}
-% {TypeScript, React}
-% {This introductory note is for some FP programmer with zero knowledge on web application. 
-% It originates from my own learning experiences of web application. We begin with a Read-Eval-Print-Loop~(REPL) project and start our exploration of full stack there.
-% }
-% \ProjectEntry{Typed-Scheme-like  Compiler and semi-Verifed Interpreter }{\url{https://github.com/DKXXXL/Schmidty}}
-% {Haskell, Coq, LLVM, llvm-pretty \hfill {\normalfont \url{https://github.com/DKXXXL/VSchmidty}}}
-% {An interpreter and A Compiler of a programming language, a variant of Scheme. With Sum, Record type and subtyping mechanism.  
-% The operational semantic is paritally verified by Coq. 
-% \texttt{References}: \textit{Implementing a JIT Compiled Language with Haskell and LLVM}, \textit{Software Foundations}, \textit{Essentials of Programming languages} }
-
-% \ProjectEntry{A theorem prover based on Calculus of Construction.}{\url{ https://github.com/DKXXXL/ITP.js}}
-% {flow.js, Javascript, Parsimmon, jsverify }
-% {Designed to be extensible with tactic system. 
-% A sketchy imitation of Coq. 
-% \texttt{Reference}: \textit{Type Theory and Formal Proof}
-% }
-
-
-% \ProjectEntry{Scheme-subset to C Transpiler}{\url{https://github.com/DKXXXL/emesch}}
-% {Haskell, Text.Parser.Combinators}
-% { \texttt{References}: \textit{Structure and Intrerpretation of Computer Program}, \textit{Write Yourself a Scheme in 48 Hours}, \textit{Essentials of Programming languages}}
-
-% \ProjectEntry{(Partial) answers to programming exercises in \textit{Software Foundations} and \textit{Coq’Art}.}{}{Coq}{
-% \begin{itemize}
-%     \item \url{https://github.com/DKXXXL/Coq-Art-Exercises}
-%     \item \url{https://github.com/DKXXXL/SoftwareFoundations-BeforeCh15}
-%     \item \url{https://github.com/DKXXXL/SoftwareFoundations-AfterCh15} 
-% \end{itemize}
-% }
-
-
 %%% Work experience
 %%% ------------------------------------------------------------
 
 \NewPart{Experience}{}
 
-% \WorkEntry
-% {Software Engineer  \underline{@ Huawei Research Center, Waterloo}}
-% {\texttt{May 2023 - Now}}
-% {}
-% {Formal Verification of WASM extension design in Coq}
+\WorkEntry
+{Software Engineer  \underline{@ Huawei Research Center, Waterloo}}
+{\texttt{May 2023 - Now}}
+{}
+{Formal Verification of Memory Safety of WASM extension design in Coq}
 
 
 \WorkEntry
@@ -308,18 +202,18 @@ This project is exploiting its potential on helping extensible theorem proving i
     
 
 
-% \WorkEntry
-% {Assistant Software Engineer  \underline{@ Huawei Research Center, Toronto}}
-% {\texttt{May 2019 - Aug 2020}}
-% {}
-% {
-%   % $\bullet$ Profiling and working on LLVM midend and backend $\bullet$ "Abstracting Abstract Machine" approach static analysis for type infernce for Machine Learning DSL $\bullet$ Hindley-Milner-based Type Inference and Liquid Type Inference for Machine Learning Python-based DSL \textit{Myia} 
-% \begin{itemize} \itemsep -1pt
-%     \item Profiling and working on LLVM midend and backend.
-%     \item "Abstracting Abstract Machine" approach static analysis for type inference on Machine Learning DSL
-%     \item Hindley-Milner-based Type Inference and Liquid Type Inference for Machine Learning DSL (related patent pending)
-% \end{itemize}
-% }
+\WorkEntry
+{Assistant Software Engineer  \underline{@ Huawei Research Center, Toronto}}
+{\texttt{May 2019 - Aug 2020}}
+{}
+{
+  % $\bullet$ Profiling and working on LLVM midend and backend $\bullet$ "Abstracting Abstract Machine" approach static analysis for type infernce for Machine Learning DSL $\bullet$ Hindley-Milner-based Type Inference and Liquid Type Inference for Machine Learning Python-based DSL \textit{Myia} 
+\begin{itemize} \itemsep -1pt
+    \item Profiling and working on LLVM midend and backend.
+    \item "Abstracting Abstract Machine" approach static analysis for type inference on Machine Learning DSL
+    \item Hindley-Milner-based Type Inference and Liquid Type Inference for Machine Learning DSL (related patent pending)
+\end{itemize}
+}
 
 
 \WorkEntry
@@ -333,6 +227,112 @@ This project is exploiting its potential on helping extensible theorem proving i
 
 
 
+    \NewPart{Award}{}
+
+    \AwardEntry
+    {PLDI'23, Distinguished Paper Award}
+    {Jun 2023}
+    {PLDI'23 Committee}
+    {}
+    
+    \AwardEntry
+    {David R. Cheriton Graduate Scholarship}
+    {Sep 2021}
+    {University of Waterloo}
+    {}
+    
+    \AwardEntry
+    {International Master’s Award of Excellence (IMAE)}
+    {Sep 2021}
+    {University of Waterloo}
+    {}
+    
+    \AwardEntry
+    {College Silver Medal}
+    {Jun 2021}
+    {University of Toronto}
+    {}
+    
+    \AwardEntry
+    {Norman Stuart Robertson Scholarships in Mathematics}
+    {Nov 2020}
+    {University of Toronto}
+    {}
+    
+    \AwardEntry
+    {St. Michael's College In-Course Scholarship}
+    {Dec 2019}
+    {University of Toronto}
+    {}
+    
+    \AwardEntry
+    {Coxeter Scholarship in Mathematics}
+    {Oct 2019}
+    {University of Toronto}
+    {}
+    
+    \AwardEntry
+    {University of Toronto Scholar}
+    {Aug 2019}
+    {University of Toronto}
+    {}
+    
+    %%% Projects
+    %%% ------------------------------------------------------------
+    \NewPart{Publication / Project}{}
+    
+    
+    \PublicationEntry{Extensible Metatheory Mechanization via Family Polymorphism}{\url{https://github.com/DKXXXL/FPOP}}
+    {Distinguished Paper Award}
+    {Family Inheritance generalizes Object Oriented Programming by supporting nested class and inheritance in various dimension,
+    powerful enough to be another solution to the Expression Problem.
+    This project is exploiting its potential on helping extensible theorem proving in mainstream proof assistants, by implementing an experimental Coq plugin and exploring meta-theoretical property. 
+    }
+    {\underline{\textbf{Publication}}: Jin, Ende, Nada Amin, and Yizhou Zhang. "Extensible Metatheory Mechanization via Family Polymorphism." Proceedings of the ACM on Programming Languages 7.PLDI (2023): 1608-1632.}
+    
+    \PublicationEntry{Universal Quantification and Implication in miniKanren}{\url{https://github.com/DKXXXL/fo-mKanren-to-LF}}
+    {}
+    {We extend the miniKanren (a logic programming DSL) with the ability of expressing universal quantification and logical implication. 
+    % This can help to solve relational and logical query in a semi-decidable way, and thus become handy in the context of constraint solving and relation checking in programming. 
+    }
+    {\underline{\textbf{Publication}}: Jin, Ende, et al. "Universal quantification and implication in miniKanren." Relational Programming Workshop. 2021. }
+    
+    \ProjectEntry{CDCL Algorithm formalized in Coq, Parametrized }{\url{https://github.com/DKXXXL/ParaCDCL}}
+    {}
+    {CDCL algorithm is the very basis of modern day SAT/SMT solvers.  We formalize an extensible and parametric variant of CDCL algorithm (together with unsatisfiable proof generation) inside Coq. We also prove its correctness. Using Coq's facility, we check our prototype by initantiating it into DPLL and extracting the verified algorithm into OCaml.}
+    
+    % \ProjectEntry{Full Stack Learning Note (Work In Progress)}{\url{https://github.com/DKXXXL/FullStackLearning}}
+    % {TypeScript, React}
+    % {This introductory note is for some FP programmer with zero knowledge on web application. 
+    % It originates from my own learning experiences of web application. We begin with a Read-Eval-Print-Loop~(REPL) project and start our exploration of full stack there.
+    % }
+    % \ProjectEntry{Typed-Scheme-like  Compiler and semi-Verifed Interpreter }{\url{https://github.com/DKXXXL/Schmidty}}
+    % {Haskell, Coq, LLVM, llvm-pretty \hfill {\normalfont \url{https://github.com/DKXXXL/VSchmidty}}}
+    % {An interpreter and A Compiler of a programming language, a variant of Scheme. With Sum, Record type and subtyping mechanism.  
+    % The operational semantic is paritally verified by Coq. 
+    % \texttt{References}: \textit{Implementing a JIT Compiled Language with Haskell and LLVM}, \textit{Software Foundations}, \textit{Essentials of Programming languages} }
+    
+    % \ProjectEntry{A theorem prover based on Calculus of Construction.}{\url{ https://github.com/DKXXXL/ITP.js}}
+    % {flow.js, Javascript, Parsimmon, jsverify }
+    % {Designed to be extensible with tactic system. 
+    % A sketchy imitation of Coq. 
+    % \texttt{Reference}: \textit{Type Theory and Formal Proof}
+    % }
+    
+    
+    % \ProjectEntry{Scheme-subset to C Transpiler}{\url{https://github.com/DKXXXL/emesch}}
+    % {Haskell, Text.Parser.Combinators}
+    % { \texttt{References}: \textit{Structure and Intrerpretation of Computer Program}, \textit{Write Yourself a Scheme in 48 Hours}, \textit{Essentials of Programming languages}}
+    
+    % \ProjectEntry{(Partial) answers to programming exercises in \textit{Software Foundations} and \textit{Coq’Art}.}{}{Coq}{
+    % \begin{itemize}
+    %     \item \url{https://github.com/DKXXXL/Coq-Art-Exercises}
+    %     \item \url{https://github.com/DKXXXL/SoftwareFoundations-BeforeCh15}
+    %     \item \url{https://github.com/DKXXXL/SoftwareFoundations-AfterCh15} 
+    % \end{itemize}
+    % }
+    
+    
 
 %%% Skills
 %%% ------------------------------------------------------------
