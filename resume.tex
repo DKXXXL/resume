@@ -109,13 +109,13 @@
 
 \newcommand{\ProjectEntry}[4]{         % Similar to \EducationEntry
     \noindent \textbf{#1}  \hfill {#2} \par
-    \noindent \underline{\textit{#3}} $\quad$ \small #4 % Description
+    \noindent \if\relax\detokenize{#3}\relax\else\underline{\textit{#3}}\quad\fi \small #4 % Description
     \normalsize \par}
 
 \newcommand{\PublicationEntry}[5]{         % Similar to \EducationEntry
     \noindent \textbf{#1}  \hfill {#2} \par
-    \noindent \underline{\textit{#3}} $\quad$ \small #4 \par% Description
-    \noindent {#5}
+    \noindent \if\relax\detokenize{#3}\relax\else\underline{\textit{#3}}\quad\fi \small #4 \par% Description
+    \if\relax\detokenize{#5}\relax\else{\leftskip=1.5em \noindent #5 \par}\fi
     \normalsize \par}
 
 
@@ -141,12 +141,12 @@
 \EducationEntryT
 {PhD Computer Science}
 { \texttt{Jan 2025 - Now} }
-{University of Waterloo, Waterloo.}
+{University of Waterloo, Waterloo. \quad Advisor: Yizhou Zhang}
 
 \EducationEntry
 {MS Thesis Master of Mathematics (Computer Science)}
 { \texttt{Sep 2021 - Jun 2023} }
-{University of Waterloo, Waterloo.    \bf{cGPA 97.5/100}}
+{University of Waterloo, Waterloo. \quad Advisor: Yizhou Zhang \quad \bf{cGPA 97.5/100}}
 {
 \underline{\textbf{Thesis:}} \textit{Design and Implementation of Family Polymorphism for Interactive Theorem Proving}
 % \underline{\textbf{Awards:}} $\bullet$ 
@@ -161,93 +161,79 @@
 {}
 
 
-%%% Work experience
-%%% ------------------------------------------------------------
-
-\NewPart{Work Experience}{}
-
-\WorkEntry
-{Teaching Assistant + Research Assistant \underline{@ University of Waterloo}}
-{\texttt{Jan 2025 - Now}}
-{}
-{
-
-  \begin{itemize} 
-    \item CS245 [Spring 2025, Spring 2026] Logic and Computation
-    \item CS642 [Winter 2025] Principles of Programming Languages
-    \item SE463 [Fall 2025] Software Project Management, Requirements, and Analysis
-  \end{itemize}
-
-}
-
-\WorkEntry
-{Associate Engineer  \underline{@ QUANTUM TECHNOLOGY RECRUITING INC.,}}
-{\texttt{May 2023 - Dec 2024}}
-{}
-{
-  \begin{itemize} \itemsep -1pt
-    \item Extend Iris-Wasm to MSWasm and extend the unary Logical Relation Model for Robust Safety
-    \end{itemize}
-   }
-
-
-\WorkEntry
-{Teaching Assistant + Research Assistant \underline{@ University of Waterloo}}
-{\texttt{Sep 2021 - Aug 2022}}
-{}
-{
-\begin{itemize}
-  \item CS116 [Fall 2021] Introduction to Computer Science 2 
-  \item CS444/CS644 [Winter 2022] Compiler Construction
-  \item CS240 [Spring 2022] Data Structures and Data Management
-  \item CS350 [Fall 2022] Operating System
-  \item CS442/CS642 [Winter 2023] Principles of Programming Languages
-  \item Research Project: Extend Family Polymorphism into dependent type proof assistant (e.g. Rocq)
-\end{itemize}  
-}
-
-
-\WorkEntry
-{Research Project \underline{@ University of Toronto}}
-{\texttt{Sep 2020 - Apr 2021}}
-{}
-{\begin{itemize} \itemsep -1pt
-    \item Project : Logic Programming and Proof Assistants: extending miniKanren
-    \end{itemize}}
-
-\WorkEntry
-{Teaching Assistant \underline{@ University of Toronto}}
-{\texttt{Sep 2020 - Apr 2021}}
-{}
-{$\bullet$ CSC324H5 [Fall 2020] Principles of Programming Languages $\bullet$ CSC465H1 [Winter 2021] Formal Methods in Software Design
-}
+    %%% Projects
+    %%% ------------------------------------------------------------
+    \NewPart{Publication / Research Project}{}
     
+    
+    \PublicationEntry{Dependently Typed Programming with Lexical Effect Handlers}{ESOP 2027}
+    {}
+    {Cocotte is a dependently typed language with user-defined lexical-scoped control effects and effect handlers, prototyped as an extension of the Rocq prover, with verified compilation and good performance.
+    }
+    {\underline{\textbf{Publication}}: Jin, Ende, and Yizhou Zhang. "Dependently Typed Programming with Lexical Effect Handlers." European Symposium on Programming (ESOP), 2027.}
 
+    \PublicationEntry{Effect Handlers in Lean: A Tale of Two Representations}{Under Review, 2026}
+    {}
+    {Lix embeds effect handlers in Lean 4 while achieving equational and induction reasoning and good performance and well-established compatibility with Lean's own design. We formally prove the parametricity of effect polymorphism to ensure its abstraction guarantee. 
+    }
+    {}
 
-\WorkEntry
-{Assistant Software Engineer  \underline{@ Huawei Research Center, Toronto}}
-{\texttt{May 2019 - Aug 2020}}
-{}
-{
-  % $\bullet$ Profiling and working on LLVM midend and backend $\bullet$ "Abstracting Abstract Machine" approach static analysis for type infernce for Machine Learning DSL $\bullet$ Hindley-Milner-based Type Inference and Liquid Type Inference for Machine Learning Python-based DSL \textit{Myia} 
-\begin{itemize} \itemsep -1pt
-    \item Profiling and working on LLVM midend and backend.
-    \item "Abstracting Abstract Machine" approach static analysis for type inference on DSL
-    \item Hindley-Milner-based Type Inference and Liquid Type Inference for DSL 
-\end{itemize}
-}
+    \PublicationEntry{Certified Compilers \`a la Carte}{PLDI 2025}
+    {}
+    {Modular construction of certified compilers using family polymorphism in a proof assistant.
+    }
+    {\underline{\textbf{Publication}}: Ebresafe, Oghenevwogaga, Ian Zhao, Ende Jin, Arthur Bright, Charles Jian, and Yizhou Zhang. "Certified Compilers \`a la Carte." Proceedings of the ACM on Programming Languages 9.PLDI (2025): 372-395.}
 
+    \PublicationEntry{Extensible Metatheory Mechanization via Family Polymorphism}{PLDI 2023}
+    {Distinguished Paper Award}
+    {Family inheritance generalizes object-oriented programming by supporting nested classes and inheritance along multiple dimensions.
+    This project applies it to extensible theorem proving in mainstream proof assistants by implementing an experimental Rocq plugin and studying its metatheoretical properties.
+    }
+    {\underline{\textbf{Publication}}: Jin, Ende, Nada Amin, and Yizhou Zhang. "Extensible Metatheory Mechanization via Family Polymorphism." Proceedings of the ACM on Programming Languages 7.PLDI (2023): 1608-1632. \hfill \url{https://github.com/DKXXXL/FPOP}}
 
-\WorkEntry
-{Research Assistant \underline{@ Fields Institute, Toronto}}
-{\texttt{July 2018 - Sep 2018}}
-{}
-{\begin{itemize} \itemsep -1pt
-    \item Project : Discrete-Event System Model 
-    % \\ Creating an algorithm that comes up with minimal communication protocol for several agents who cooperate to discover the secret information of a machine which has partial information hidden. This research can help a system to evaluate the current strategy that hides information from several collaborating hackers.
-    \end{itemize}}
-
-
+    \PublicationEntry{Universal Quantification and Implication in miniKanren}{miniKanren Workshop 2021}
+    {}
+    {We extend miniKanren, a logic programming DSL, with the ability to express universal quantification and logical implication.
+    % This can help to solve relational and logical query in a semi-decidable way, and thus become handy in the context of constraint solving and relation checking in programming.
+    }
+    {\underline{\textbf{Publication}}: Jin, Ende, et al. "Universal quantification and implication in miniKanren." Relational Programming Workshop. 2021. \hfill \url{https://github.com/DKXXXL/fo-mKanren-to-LF}}
+    
+    \ProjectEntry{Parametrized CDCL Algorithm Formalized in Rocq}{\url{https://github.com/DKXXXL/ParaCDCL}}
+    {}
+    {We formalize and verify an extensible CDCL algorithm, with unsatisfiability proof generation, in Rocq. }
+    
+    % \ProjectEntry{Full Stack Learning Note (Work In Progress)}{\url{https://github.com/DKXXXL/FullStackLearning}}
+    % {TypeScript, React}
+    % {This introductory note is for some FP programmer with zero knowledge on web application. 
+    % It originates from my own learning experiences of web application. We begin with a Read-Eval-Print-Loop~(REPL) project and start our exploration of full stack there.
+    % }
+    % \ProjectEntry{Typed-Scheme-like  Compiler and semi-Verifed Interpreter }{\url{https://github.com/DKXXXL/Schmidty}}
+    % {Haskell, Rocq, LLVM, llvm-pretty \hfill {\normalfont \url{https://github.com/DKXXXL/VSchmidty}}}
+    % {An interpreter and A Compiler of a programming language, a variant of Scheme. With Sum, Record type and subtyping mechanism.  
+    % The operational semantic is paritally verified by Rocq. 
+    % \texttt{References}: \textit{Implementing a JIT Compiled Language with Haskell and LLVM}, \textit{Software Foundations}, \textit{Essentials of Programming languages} }
+    
+    % \ProjectEntry{A theorem prover based on Calculus of Construction.}{\url{ https://github.com/DKXXXL/ITP.js}}
+    % {flow.js, Javascript, Parsimmon, jsverify }
+    % {Designed to be extensible with tactic system. 
+    % A sketchy imitation of Rocq. 
+    % \texttt{Reference}: \textit{Type Theory and Formal Proof}
+    % }
+    
+    
+    % \ProjectEntry{Scheme-subset to C Transpiler}{\url{https://github.com/DKXXXL/emesch}}
+    % {Haskell, Text.Parser.Combinators}
+    % { \texttt{References}: \textit{Structure and Intrerpretation of Computer Program}, \textit{Write Yourself a Scheme in 48 Hours}, \textit{Essentials of Programming languages}}
+    
+    % \ProjectEntry{(Partial) answers to programming exercises in \textit{Software Foundations} and \textit{Coq’Art}.}{}{Rocq}{
+    % \begin{itemize}
+    %     \item \url{https://github.com/DKXXXL/Rocq-Art-Exercises}
+    %     \item \url{https://github.com/DKXXXL/SoftwareFoundations-BeforeCh15}
+    %     \item \url{https://github.com/DKXXXL/SoftwareFoundations-AfterCh15} 
+    % \end{itemize}
+    % }
+    
+    
 
     \NewPart{Award}{}
 
@@ -309,76 +295,96 @@
     {University of Toronto}
     {}
     
-    %%% Projects
-    %%% ------------------------------------------------------------
-    \NewPart{Publication / Project}{}
+%%% Work experience
+%%% ------------------------------------------------------------
+
+\NewPart{Work Experience}{}
+
+\WorkEntry
+{Teaching Assistant + Research Assistant \underline{@ University of Waterloo}}
+{\texttt{Jan 2025 - Now}}
+{}
+{
+
+  \begin{itemize} 
+    \item CS245E [Fall 2026] Logic and Computation (Enriched)
+    \item CS245 [Spring 2025, Spring 2026] Logic and Computation
+    \item SE463 [Fall 2025] Software Project Management, Requirements, and Analysis
+    \item CS642 [Winter 2025] Principles of Programming Languages
+  \end{itemize}
+
+}
+
+\WorkEntry
+{Associate Engineer  \underline{@ Quantum Technology Recruiting Inc.}}
+{\texttt{May 2023 - Dec 2024}}
+{}
+{
+  \begin{itemize} \itemsep -1pt
+    \item Extended Iris-Wasm to MSWasm and extended the unary logical relation model for robust safety
+    \end{itemize}
+   }
+
+
+\WorkEntry
+{Teaching Assistant + Research Assistant \underline{@ University of Waterloo}}
+{\texttt{Sep 2021 - Aug 2022}}
+{}
+{
+\begin{itemize}
+  \item CS116 [Fall 2021] Introduction to Computer Science 2 
+  \item CS444/CS644 [Winter 2022] Compiler Construction
+  \item CS240 [Spring 2022] Data Structures and Data Management
+  \item CS350 [Fall 2022] Operating Systems
+  \item CS442/CS642 [Winter 2023] Principles of Programming Languages
+  \item Research project: extending family polymorphism to dependently typed proof assistants (e.g., Rocq)
+\end{itemize}  
+}
+
+
+\WorkEntry
+{Research Project \underline{@ University of Toronto}}
+{\texttt{Sep 2020 - Apr 2021}}
+{}
+{\begin{itemize} \itemsep -1pt
+    \item Project: Logic Programming and Proof Assistants: extending miniKanren
+    \end{itemize}}
+
+\WorkEntry
+{Teaching Assistant \underline{@ University of Toronto}}
+{\texttt{Sep 2020 - Apr 2021}}
+{}
+{$\bullet$ CSC324H5 [Fall 2020] Principles of Programming Languages $\bullet$ CSC465H1 [Winter 2021] Formal Methods in Software Design
+}
     
-    
-    \PublicationEntry{Extensible Metatheory Mechanization via Family Polymorphism}{\url{https://github.com/DKXXXL/FPOP}}
-    {Distinguished Paper Award}
-    {Family Inheritance generalizes Object Oriented Programming by supporting nested class and inheritance in various dimension,
-    powerful enough to be another solution to the Expression Problem.
-    This project is exploiting its potential on helping extensible theorem proving in mainstream proof assistants, by implementing an experimental Rocq plugin and exploring meta-theoretical property. 
-    }
-    {\underline{\textbf{Publication}}: Jin, Ende, Nada Amin, and Yizhou Zhang. "Extensible Metatheory Mechanization via Family Polymorphism." Proceedings of the ACM on Programming Languages 7.PLDI (2023): 1608-1632.}
-    
-    \PublicationEntry{Universal Quantification and Implication in miniKanren}{\url{https://github.com/DKXXXL/fo-mKanren-to-LF}}
-    {}
-    {We extend the miniKanren (a logic programming DSL) with the ability of expressing universal quantification and logical implication. 
-    % This can help to solve relational and logical query in a semi-decidable way, and thus become handy in the context of constraint solving and relation checking in programming. 
-    }
-    {\underline{\textbf{Publication}}: Jin, Ende, et al. "Universal quantification and implication in miniKanren." Relational Programming Workshop. 2021. }
-    
-    \ProjectEntry{CDCL Algorithm formalized in Rocq, Parametrized }{\url{https://github.com/DKXXXL/ParaCDCL}}
-    {}
-    {CDCL algorithm is the very basis of modern day SAT/SMT solvers.  We formalize an extensible and parametric variant of CDCL algorithm (together with unsatisfiable proof generation) inside Rocq. We also prove its correctness. Using Rocq's facility, we check our prototype by initantiating it into DPLL and extracting the verified algorithm into OCaml.}
-    
-    % \ProjectEntry{Full Stack Learning Note (Work In Progress)}{\url{https://github.com/DKXXXL/FullStackLearning}}
-    % {TypeScript, React}
-    % {This introductory note is for some FP programmer with zero knowledge on web application. 
-    % It originates from my own learning experiences of web application. We begin with a Read-Eval-Print-Loop~(REPL) project and start our exploration of full stack there.
-    % }
-    % \ProjectEntry{Typed-Scheme-like  Compiler and semi-Verifed Interpreter }{\url{https://github.com/DKXXXL/Schmidty}}
-    % {Haskell, Rocq, LLVM, llvm-pretty \hfill {\normalfont \url{https://github.com/DKXXXL/VSchmidty}}}
-    % {An interpreter and A Compiler of a programming language, a variant of Scheme. With Sum, Record type and subtyping mechanism.  
-    % The operational semantic is paritally verified by Rocq. 
-    % \texttt{References}: \textit{Implementing a JIT Compiled Language with Haskell and LLVM}, \textit{Software Foundations}, \textit{Essentials of Programming languages} }
-    
-    % \ProjectEntry{A theorem prover based on Calculus of Construction.}{\url{ https://github.com/DKXXXL/ITP.js}}
-    % {flow.js, Javascript, Parsimmon, jsverify }
-    % {Designed to be extensible with tactic system. 
-    % A sketchy imitation of Rocq. 
-    % \texttt{Reference}: \textit{Type Theory and Formal Proof}
-    % }
-    
-    
-    % \ProjectEntry{Scheme-subset to C Transpiler}{\url{https://github.com/DKXXXL/emesch}}
-    % {Haskell, Text.Parser.Combinators}
-    % { \texttt{References}: \textit{Structure and Intrerpretation of Computer Program}, \textit{Write Yourself a Scheme in 48 Hours}, \textit{Essentials of Programming languages}}
-    
-    % \ProjectEntry{(Partial) answers to programming exercises in \textit{Software Foundations} and \textit{Coq’Art}.}{}{Rocq}{
-    % \begin{itemize}
-    %     \item \url{https://github.com/DKXXXL/Rocq-Art-Exercises}
-    %     \item \url{https://github.com/DKXXXL/SoftwareFoundations-BeforeCh15}
-    %     \item \url{https://github.com/DKXXXL/SoftwareFoundations-AfterCh15} 
-    % \end{itemize}
-    % }
-    
-    
+
+
+
+
+\WorkEntry
+{Research Assistant \underline{@ Fields Institute, Toronto}}
+{\texttt{July 2018 - Sep 2018}}
+{}
+{\begin{itemize} \itemsep -1pt
+    \item Project: Discrete-Event System Model
+    % \\ Creating an algorithm that comes up with minimal communication protocol for several agents who cooperate to discover the secret information of a machine which has partial information hidden. This research can help a system to evaluate the current strategy that hides information from several collaborating hackers.
+    \end{itemize}}
+
+
 
 %%% Skills
 %%% ------------------------------------------------------------
 \NewPart{Skills}{}
 % \SkillEntry{Experience of Various Programming Languages}{Rocq, Haskell, Java, C/C++, Python, Racket}
 \begin{itemize} \itemsep -1pt
-  \item Hands on Various Programming Languages : Lean, Rocq, OCaml, Python, Racket, Haskell, Lean, Agda,  Java, C/C++
-  \item Basic knowledge of the process of compilation and interpretation of (functional) programming Languages
+  \item Hands-on experience with programming languages: Lean, Rocq, OCaml, Python, Racket, Haskell, Agda, Java, C/C++
+  \item Basic knowledge of the process of compilation and interpretation of (functional) programming languages
   \item
   % (Multivariable) Calculus, 
   % Linear Algebra; 
-  Computability theory and Mathematical logic, Functional Programming and Formal Verification,
-  \item Category Semantic and Type Theory 
-  \item \textbf{Acqusition of Two Languages:} Mandarin (Native Speaker) ; English (Written/Spoken)
+  Computability theory and mathematical logic; functional programming and formal verification
+  \item Categorical semantics and type theory
+  \item \textbf{Languages:} Mandarin (native); English (written/spoken)
 \end{itemize}
 % \SkillsEntry{Passion and Knowledge about CS and Math}{}{}{}
 % \SkillEntry{}{
